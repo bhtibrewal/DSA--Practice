@@ -1,2 +1,3 @@
 # DSA--Practice
-Collection of LeetCode questions to ace the coding interview! - Created using [LeetHub](https://github.com/QasimWani/LeetHub)
+Record of My DSA-practice
+Leetcode Profile: https://leetcode.com/bhavikatibrewal/
