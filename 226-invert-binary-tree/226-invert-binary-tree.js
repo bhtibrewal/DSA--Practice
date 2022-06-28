@@ -11,15 +11,13 @@
  * @return {TreeNode}
  */
 var invertTree = function(root) {
-    if(!root) return root;
-    console.log(root)
-    helper(root);
-    console.log(root);
-    return root;
+    return invert(root);
 };
-const helper=(node)=>{
-    
-    [node.left, node.right] = [node.right,node.left ]
-    if(node.left) helper(node.left);
-    if(node.right) helper(node.right);
+
+const invert =(root)=>{
+    if (root == null) return null
+    let left = root.left;
+    root.left = invert(root.right);
+    root.right = invert(left);
+    return root
 }
