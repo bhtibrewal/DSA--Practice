@@ -30,11 +30,11 @@ Complete the function knapSack() which takes maximum capacity W, weight array wt
 
 Expected Time Complexity: O(N*W).
 Expected Auxiliary Space: O(N*W)
-
+```
 Constraints:
 1 ≤ N ≤ 1000
 1 ≤ W ≤ 1000
 1 ≤ wt[i] ≤ 1000
 1 ≤ v[i] ≤ 1000
-
+```
 Explanation : https://leetcode.com/discuss/study-guide/1152328/01-Knapsack-Problem-and-Dynamic-Programming
