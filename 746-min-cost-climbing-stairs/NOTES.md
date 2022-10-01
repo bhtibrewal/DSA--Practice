@@ -1,5 +1,7 @@
+
+## recursion + DP
+
 ```jsx
-// recursion + DP 
 const minCostClimbingStairs =(cost)=>{
     let n = cost.length, dp=Array(n+1).fill(-1)
     return Math.min(helper(cost,n-1, dp), helper(cost,n-2, dp))
@@ -16,8 +18,9 @@ const helper = (cost,n, dp)=>{
 }
 ```
 
+## Bottom up computation - O(n) time, O(1) space
+
 ```jsx
-// Bottom up computation - O(n) time, O(1) space
 var minCostClimbingStairs = function(cost) {
   let n = cost.length, i = 2
   if(n <= 2) return Math.min(cost[0] , cost[1])

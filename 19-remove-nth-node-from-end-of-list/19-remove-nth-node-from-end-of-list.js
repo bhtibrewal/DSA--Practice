@@ -10,23 +10,23 @@
  * @param {number} n
  * @return {ListNode}
  */
-var removeNthFromEnd = function(head, n) {
+var removeNthFromEnd = function (head, n) {
     let nhead = [];
     nhead.next = head;
     let node = nhead, tail = nhead;
-    
-    while( n>0 ){
+
+    while (n > 0) {
         node = node.next;
         n--
     }
-    
-    while(node.next!==null){
+
+    while (node.next !== null) {
         node = node.next;
         tail = tail.next;
     }
-    
+
     tail.next = tail.next.next
     console.log(node, tail)
-   
+
     return nhead.next;
 };

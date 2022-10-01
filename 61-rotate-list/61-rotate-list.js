@@ -10,29 +10,32 @@
  * @param {number} k
  * @return {ListNode}
  */
-var rotateRight = function(head, k) {
-    console.log(head)
-    if(!head || !head.next || k < 1) return head;
-    
-    let node = head, count=1
-    // count no of nodes
-    while(node.next){
-       node = node.next;
+var rotateRight = function (head, k) {
+
+    if (!head || !head.next || k < 1) return head;
+
+    let node = head, count = 1
+    // count the length of list
+    while (node.next) {
+        node = node.next;
         count++;
     }
-    console.log(count, "count");
+    // node points at tail node
+    // make the list circular by making tail.next = head
     node.next = head;
-   
-    k = count - k % count -1
-    console.log(k, "k")
-    
-    node = head
-    while(k--){
-        node = node.next 
-    }    
 
-    const store = node.next;
+    // find the k by taking its modulas 
+    k = count - k % count - 1
+    console.log(k, "k")
+
+    // go to kth node and break the circle 
+    node = head
+    while (k--) {
+        node = node.next
+    }
+
+    const newHead = node.next;
     node.next = null;
-    
-    return store
+
+    return newHead
 };
