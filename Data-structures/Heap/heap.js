@@ -70,7 +70,7 @@ function Heapify(arr, n = arr.length - 1, i) {
     if (leftIndex <= n && arr[leftIndex] > arr[i]) {
         largest = leftIndex;
     }
-    if (rightIndex <= n && arr[rightIndex] > arr[i]) {
+    if (rightIndex <= n && arr[rightIndex] > arr[largest]) {
         largest = rightIndex;
     }
     if (largest !== i) {
