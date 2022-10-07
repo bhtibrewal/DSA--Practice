@@ -1,4 +1,5 @@
-```
+```js
+// recursive approach didn't work
 var numDecodings = function(s) {
 if(s.length == 0) return 0;
 const dp = Array(s.length+1).fill(-1);
