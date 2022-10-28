@@ -24,7 +24,7 @@ var reorderList = function(head) {
 
     // Step 2 -> reverse the nodes after mid
     mid = reverseList(mid);
-console.log({mid})
+
     // Step 3 -> merge the two arr one item at a time
 
     while (mid){
@@ -41,7 +41,7 @@ console.log({mid})
 
 var reverseList = function(head) {
     let reversed = null
-    // let 
+
     while(head){
         let node = head.next
         head.next = reversed;
