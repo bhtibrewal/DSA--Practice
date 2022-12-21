@@ -37,3 +37,5 @@ You don't need to read input or print anything. Your task is to complete the fun
 1 &lt;= N &lt;= 10<sup>3</sup><br>
 1 &lt;= arr[i] &lt;= 10<sup>4</sup></span></p>
 </div>
+
+![image](https://user-images.githubusercontent.com/42600164/208874585-11eb7c6e-7993-4e15-8b15-f5c7d462e3d2.png)
