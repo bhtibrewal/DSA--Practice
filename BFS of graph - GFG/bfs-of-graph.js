@@ -69,21 +69,18 @@ class Solution {
 	let queue = [0];
 
 	while (queue.length) {
-		let s = Number(queue[0]);
-		queue.shift();
-		bfs_transversal.push(s);
-		let length = adj[s].length;
+		let s = queue.shift();
 
-		while (length--) {
-			let adjacent = adj[s].shift();
-			
+		bfs_transversal.push(s);
+
+		adj[s].forEach((adjacent) => {
+// 			console.log(visited[adjacent]);
 			if (!visited[adjacent]) {
 				visited[adjacent] = true;
 				queue.push(adjacent);
 			}
-		}
+		});
 	}
-	
 	return bfs_transversal;
 }
 }
