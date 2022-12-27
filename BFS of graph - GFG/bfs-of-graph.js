@@ -62,25 +62,46 @@ function main() {
 class Solution {
     // Function to return Breadth First Traversal of given graph.
     bfsOfGraph(V, adj) {
-	const bfs_transversal = [],
-		visited = Array(V).fill(false);
+        const bfs_transversal = [],
+            visited = Array(V).fill(false);
 
-	visited[0] = true;
-	let queue = [0];
+        visited[0] = true;
+        let queue = [0];
 
-	while (queue.length) {
-		let s = queue.shift();
+        while (queue.length) {
+            let s = queue.shift();
 
-		bfs_transversal.push(s);
+            bfs_transversal.push(s);
 
-		adj[s].forEach((adjacent) => {
-// 			console.log(visited[adjacent]);
-			if (!visited[adjacent]) {
-				visited[adjacent] = true;
-				queue.push(adjacent);
-			}
-		});
-	}
-	return bfs_transversal;
+            adj[s].forEach((adjacent) => {
+                if (!visited[adjacent]) return;
+                visited[adjacent] = true;
+                queue.push(adjacent);
+            });
+        }
+        return bfs_transversal;
+    }
 }
+class Solution {
+    // Function to return Breadth First Traversal of given graph.
+    bfsOfGraph(V, adj,) {
+        const bfs_transversal = [],
+            visited = Array(V).fill(false);
+        visited[0] = true;
+        bfs_transversal.push(0);
+        for (let i in adj)
+            visited[i] && helper(adj, i, bfs_transversal, visited)
+        return bfs_transversal;
+    }
+}
+function helper(adj, node, bfs_transversal, visited) {
+
+    adj[node].forEach((adjacent) => {
+
+        if (visited[adjacent]) return;
+
+        visited[adjacent] = true;
+        bfs_transversal.push(adjacent);
+
+    });
 }
