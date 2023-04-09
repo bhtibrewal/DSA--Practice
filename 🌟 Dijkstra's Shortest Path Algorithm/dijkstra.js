@@ -7,6 +7,19 @@
 
 //Function to find the shortest distance of all the vertices
 //from the source vertex S.
+// 4 5
+// 0 1 5
+// 0 2 8
+// 1 2 9
+// 1 3 2
+// 2 3 6
+// V = 4, 
+// Adj = [
+//   [ [ 1, 5 ], [ 2, 8 ] ],
+//   [ [ 0, 5 ], [ 2, 9 ], [ 3, 2 ] ],
+//   [ [ 0, 8 ], [ 1, 9 ], [ 3, 6 ] ],
+//   [ [ 1, 2 ], [ 2, 6 ] ]
+// ]
 function dijkstra(V, Adj, S) {
     //initialize the DISTANCE vector to ‘INT_MAX’
     let dist = new Array(V).fill(Number.MAX_VALUE)

@@ -1,0 +1,3 @@
+- [x] Knapsack
+- [x] Djikstra
+- 

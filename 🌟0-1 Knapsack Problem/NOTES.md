@@ -110,30 +110,27 @@ val = [1, 2, 5, 6]
 ## Approach: 3 -> Bottom Up 
 Space Complexility -> O(n*2) 
 ```jsx
-const knapSack = (capacity, wt, val, n) => { 
+const knapSack = (W, wt, val, n) => { 
 
-    // build a dp n+1*W+1
-      let dp = Array(n+1).fill(0).map(el=> new Array(capacity+1).fill(0));
-          
-      for( let i = 0; i <= n; i++){
-        for (let w = 0; w <= capacity; w++){
+  // build a dp n+1*W+1
+  let dp = Array(n + 1)
+    .fill(0)
+    .map((el) => new Array(W + 1).fill(0));
 
-            if(i == 0 || w == 0 ) dp[i][w] = 0;
+  for (let i = 0; i < n; i++) {
+    for (let w = 1; w <= W; w++) {
+      let include = 0;
 
-            else {
-                let include = 0;
+      if (wt[i] <= w) include = i == 0 ? val[i] : val[i] + dp[i - 1][w - wt[i]];
 
-                if (wt[i -1] <= w) 
-                include = val[i -1]+dp[i-1][w - wt[i - 1]]
-            
-                let exclude = dp[i-1][w];
-                
-                dp[i][w] = Math.max(include, exclude)
-            }
-        }
-      }
-      
-      return dp[n][capacity]
+      let exclude = i == 0 ? 0 : dp[i - 1][w];
+
+      dp[i][w] = Math.max(include, exclude);
+    }
+    console.log(dp[i]);
+  }
+
+  return dp[n - 1][W];
 }
 ```
 
