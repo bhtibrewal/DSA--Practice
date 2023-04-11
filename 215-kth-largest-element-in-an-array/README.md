@@ -20,3 +20,5 @@
 	<li><code>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>
 </ul>
 </div>
+
+https://www.geeksforgeeks.org/kth-smallest-largest-element-in-unsorted-array-expected-linear-time/
