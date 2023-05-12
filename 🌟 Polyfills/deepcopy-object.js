@@ -8,14 +8,15 @@ const user = {
   }
 }
 
-const deepCopyObject = (object) => {
-  if (!object) return object;
-  const clonedObject = {};
-  for (const key in object) {
-    value = object[key];
-    clonedObject[key] = typeof value === 'object' ? deepCopyObject(value) : value
-  }
+export default function deepClone(object) {
+  if(typeof object !== "object" || object == null) return object;
 
+ const clonedObject = {};
+
+  for ( let key in object ){
+    let value = object[key];
+    clonedObject[key] = deepClone(value);
+  }
   return clonedObject;
 }
 const deeCopiedObject = deepCopyObject(user)
